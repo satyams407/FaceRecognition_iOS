@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYCCameraViewController" customModule="MyAirtel" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraOrientationButton" destination="v1K-p9-HJH" id="Ykx-ls-g8J"/>
+                <outlet property="captureButton" destination="DTn-uk-ar2" id="mHX-4R-1c4"/>
+                <outlet property="drawingView" destination="7Z4-qJ-buB" id="0Z2-Qo-0CS"/>
+                <outlet property="videoPreview" destination="sv1-63-rje" id="aDi-TP-CSV"/>
+                <outlet property="view" destination="iN0-l3-epB" id="j2S-vf-cEQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sv1-63-rje">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="816"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Z4-qJ-buB" customClass="DrawingView" customModule="MyAirtel" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y0o-Vl-FwI">
+                    <rect key="frame" x="10" y="817" width="394" height="45"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1K-p9-HJH">
+                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="RRg-5I-vch"/>
+                                <constraint firstAttribute="width" constant="45" id="rKf-DY-wLW"/>
+                            </constraints>
+                            <state key="normal" image="camera_toggle"/>
+                            <connections>
+                                <action selector="changeCameraOrientation:" destination="-1" eventType="touchUpInside" id="0J1-XF-BQ1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTn-uk-ar2">
+                            <rect key="frame" x="55" y="0.0" width="339" height="45"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Capture">
+                                <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="capture:" destination="-1" eventType="touchUpInside" id="tH4-ze-SId"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="ejX-nH-wua"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="y0o-Vl-FwI" firstAttribute="top" secondItem="7Z4-qJ-buB" secondAttribute="bottom" constant="21" id="BgM-R3-qWX"/>
+                <constraint firstItem="y0o-Vl-FwI" firstAttribute="top" secondItem="sv1-63-rje" secondAttribute="bottom" constant="1" id="E7o-2o-wBN"/>
+                <constraint firstAttribute="trailing" secondItem="sv1-63-rje" secondAttribute="trailing" id="EEE-t9-x7k"/>
+                <constraint firstItem="7Z4-qJ-buB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IUi-F4-hHW"/>
+                <constraint firstItem="y0o-Vl-FwI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Qrh-OP-rgi"/>
+                <constraint firstItem="7Z4-qJ-buB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UEK-zq-A6m"/>
+                <constraint firstItem="sv1-63-rje" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bRs-dO-CHC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="y0o-Vl-FwI" secondAttribute="bottom" id="hEr-Ss-FLW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="y0o-Vl-FwI" secondAttribute="trailing" constant="10" id="iCa-wr-uzw"/>
+                <constraint firstItem="7Z4-qJ-buB" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="nTY-7M-xjR"/>
+                <constraint firstItem="sv1-63-rje" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zfz-8h-3Lk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-165.21739130434784" y="107.8125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="camera_toggle" width="32" height="24"/>
+    </resources>
+</document>
